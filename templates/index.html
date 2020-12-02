@@ -5,18 +5,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>PravdaHotel</title>
+    <link rel="stylesheet" href="{% static 'css/styleIndex.css' %}">
 </head>
 <body>
-    <nav class="nav">
-        <a href="#"><img src="{% static 'img/logo.png' %}" alt="logo" class="logo"></a>
-        <ul class="navigation">
-             <hr>
-             <li><a href="/about_us">про нас</a></li>
-             <li><a href="/gallery">галерея</a></li>
-             <li><a href="/book">забронювати</a></li>
-             <li><a href="#" onclick="entry()"><img src="{% static 'img/indlogin.png' %}" alt="exit"></a></li>
-        </ul>
-    </nav>
+    <header>
+        <nav class="nav">
+            <a href="/"><img src="{% static 'img/logo.png' %}" alt="logo" class="logo"></a>
+            <ul class="navigation">
+                <hr>
+                <li><a href="/about_us">про нас</a></li>
+                <li><a href="/gallery">галерея</a></li>
+                <li><a href="/book">забронювати</a></li>
+            </ul>
+        </nav>
+    </header>
+    <hr>
+    <div class="h1">
+        <h1>pravda hotel</h1>
+    </div>
+    <div class="p">
+        <p>Поринь у вир справжніх, правдивих ємоцій. </p>
+        <p>Ми подаруємо тобі неповторне літо</p>
+    </div>
+    <div class="button-index">
+        <a href="/book">переглянути номера</a>
+    </div>
+    <footer>
+        <div class="end">
+        <!--Icons made by <a href="https://www.flaticon.com/authors/creaticca-creative-agency" title="Creaticca Creative Agency">Creaticca Creative Agency</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a> -->
 
+            <div class="icon-group">
+                <img src="{% static 'img/ftphone.png' %}" alt="" class="resuor"><p class="fter"> +111-222-333</p>
+            </div>
+            <div class="icon-group">
+                <img src="{% static 'img/email.svg' %}" alt="" class="resuor"><p class="fter">pravdahotel@gmail.com</p>
+            </div>
+            <div class="icon-group">
+                <img src="{% static 'img/geolocation.svg' %}" alt="" class="resuor"><p class="fter"> 55 Columbus Circle, New York, NY</p>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

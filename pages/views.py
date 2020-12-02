@@ -1,6 +1,10 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 # Create your views here.
+
+def handler404(request, *args, **kwargs):
+    return redirect('/')
+
 
 def index(request):
     if request.method == "GET":
