@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PravdaHotel</title>
+</head>
+<body>
+    <nav class="nav">
+        <a href="#"><img src="{% static 'img/logo.png' %}" alt="logo" class="logo"></a>
+        <ul class="navigation">
+             <hr>
+             <li><a href="/about_us">про нас</a></li>
+             <li><a href="/gallery">галерея</a></li>
+             <li><a href="/book">забронювати</a></li>
+             <li><a href="#" onclick="entry()"><img src="{% static 'img/indlogin.png' %}" alt="exit"></a></li>
+        </ul>
+    </nav>
+
+</body>
+</html>
