@@ -1,23 +1,5 @@
-html {
-    font-family: 'Playfair Display', serif;
-    background: #b0ada5;
-}
-
 body {
     background-image: url(../img/bimg.jpg);
-}
-
-.wrapper {
-    padding-left: 15%;
-    padding-right: 15%;
-    margin: 0 auto;
-    position: relative;
-
-}
-
-.navigation > li:first-child {
-    padding-left: 2%;
-    margin-left: 3%;
 }
 
 .center, .page, .button-index a, .end, .icon-group {
@@ -28,7 +10,7 @@ body {
 }
 
 .page {
-    margin: 5%;
+    margin-top: 5%;
 }
 
 .center {
@@ -87,6 +69,13 @@ body {
 }
 
 
+
+/*@media (max-width: 1200px) {
+    .wrapper {
+        max-width: 970px;
+    }
+}*/
+
 @media (max-width: 767px) {
     h1, p, a {
         font-size: 12px;
@@ -94,3 +83,5 @@ body {
         padding: 0;
     }
 }
+
+

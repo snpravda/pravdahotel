@@ -1,18 +1,12 @@
-html {
+/*general.css*/
+body {
     font-family: 'Playfair Display', serif;
     background: #b0ada5;
-}
-
-body {
-    height: 100%;
     background-image: url(../img/bgiforpage.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
-}
-
-footer {
-    margin-top: 5%;
+    height: 100%;
 }
 
 .wrapper {
@@ -24,10 +18,10 @@ footer {
 }
 
 .logo {
-    width: 150%;
-    min-width: 100px;
-    min-height: 95px;
-    height: 150%;
+    width: 100%;
+    /*min-width: 100px;
+    min-height: 95px;*/
+    height: 100%;
 }
 
 .nav {
@@ -46,12 +40,12 @@ footer {
     font-weight: 700;
     text-transform: uppercase;
     margin-bottom: -1.4%;
-    width: 65%;
-    min-width: 90%;
+    width: 35%;
+    min-width: 699.04px;
     height: 43.51px;
     background: rgba(168, 135, 96, 0.69);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    margin-left: 10%;
+    margin-left: 1%;
 }
 
 .navigation > hr {
@@ -71,8 +65,8 @@ footer {
 }
 
 .navigation > li:first-child {
-    padding-left: 2%;
-    margin-left: 3%;
+    padding-left: 0;
+    margin-left: 0;
 }
 
 .navigation > li > a {
@@ -89,7 +83,9 @@ hr {
     margin-top: 1%;
     background: rgba(168, 150, 96, 0.69);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    transform: rotate(0.07deg);
 }
+
 
 .title-item {
     display: flex;
@@ -163,6 +159,7 @@ hr {
 
 .end, .icon-group {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     text-align: center;
@@ -208,19 +205,25 @@ hr {
     margin-left: 2px;
 }
 
+/*@media (max-width: 1200px) {
+    .wrapper {
+        max-width: 970px;
+    }
+}*/
+/*
 @media (max-width: 992px) {
     .wrapper {
         max-width: 750px;
     }
 
     .nav {
-        margin-top: -10%;
         padding: 0;
+        margin: 0;
     }
 
     .logo {
         margin-top: -10%;
-        /*margin-left: 10%;*/
+        margin-left: 55%;
     }
 
     .navigation {
@@ -229,12 +232,69 @@ hr {
         box-shadow: none;
         padding: 0;
         min-height: 300px;
-        width: 100%;
     }
 
     .navigation > hr {
-        width: 0;
-        height: 0;
+        margin-left: 10%;
+    }
+
+    .navigation > li > a {
+        font-family: 'Montserrat', sans-serif;
+        text-decoration: none;
+        font-size: 22px;
+        font-weight: 400;
+        text-transform: uppercase;
+        padding-bottom: 0;
+        margin-left: 15%;
+    }
+
+    .navigation > li {
+        margin: 0;
+        padding: 0;
+    }
+
+    .title-item {
+        font-size: 32px;
+    }
+
+    .end {
+        flex-direction: column;
+    }
+
+    .resuor {
+        display: block;
+    }
+
+    .icon-group {
+        margin-top: 4%;
+    }
+}
+
+@media (max-width: 767px) {
+    .wrapper {
+        max-width: none;
+    }
+
+    .nav {
+        padding: 0;
+        margin: 0;
+    }
+
+    .logo {
+        margin-top: -10%;
+        margin-left: 255%;
+    }
+
+    .navigation {
+        flex-direction: column;
+        background: none;
+        box-shadow: none;
+        padding: 0;
+        min-height: 300px;
+    }
+
+    .navigation > hr {
+        margin-left: 40%;
     }
 
     .navigation > li > a {
@@ -256,96 +316,105 @@ hr {
         flex-direction: column;
     }
 
-    .icon-group:first-child {
-        width: 100%;
+    .resuor {
+        display: block;
     }
 
-    .icon-group:nth-child(2) {
-        margin-right: 0;
+    .icon-group {
+        margin-top: 4%;
     }
+}*/
 
-    .icon-group:nth-child(3) {
-        width: 100%;
-    }
+
+
+
+/*styleIndex.css*/
+
+.wrapper {
+    padding-left: 15%;
+    padding-right: 15%;
+    margin: 0 auto;
+    position: relative;
 
 }
 
+.navigation > li:first-child {
+    padding-left: 2%;
+    margin-left: 3%;
+}
+
+.center, .page, .button-index a, .end, .icon-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.page {
+    margin: 5%;
+}
+
+.center {
+    flex-direction: column;
+    font-style: italic;
+    font-variant: small-caps;
+    background-image: url(../img/bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    width: 100%;
+    margin: 0;
+    padding: 10%;
+}
+
+.h1 > h1 {
+    font-weight: normal;
+    font-size: 96px;
+    color: rgba(147, 70, 55, 0.81);
+    margin-top: -0.5%;
+}
+
+.p {
+    margin-top: -5%;
+}
+
+.p > p {
+    font-weight: 900;
+    font-size: 18px;
+    color: #4F4C6B;
+    mix-blend-mode: darken;
+    margin-top: -1%;
+}
+
+.h1 {
+    margin-top: -4%;
+}
+
+.button-index {
+    background: #A89660;
+    box-shadow: 0px 4px 4px #272449;
+    border-radius: 45px;
+    width: 288px;
+    height: 40px;
+    margin-top: 5%;
+    border: none;
+}
+
+.button-index > a {
+    text-decoration: none;
+    font-variant: small-caps;
+    color: #000000;
+    font-weight: 200;
+    font-size: 24px;
+    font-style: normal;
+}
+
+
 @media (max-width: 767px) {
-    .wrapper {
-        max-width: none;
-/*        padding-left: 10%;
-        padding-right: 10%;*/
-    }
-
-    .nav {
-        margin-top: -15%;
-        padding: 0;
-    }
-
-    .logo {
-        margin-top: -10%;
-        /*margin-left: 10%;*/
-    }
-
-    .navigation {
-        flex-direction: column;
-        background: none;
-        box-shadow: none;
-        padding: 0;
-        min-height: 300px;
-    }
-
-    .navigation > hr {
-        width: 0;
-        height: 0;
-    }
-
-    .navigation > li > a {
-        font-family: 'Montserrat', sans-serif;
-        text-decoration: none;
-        font-size: 22px;
-        font-weight: 400;
-        text-transform: uppercase;
-        padding-bottom: 0;
-        margin-left: 40%;
-    }
-
-    .navigation > li {
+    h1, p, a {
+        font-size: 12px;
         margin: 0;
         padding: 0;
     }
 }
 
-@media (max-width: 446px) {
-    .navigation > li > a {
-        font-family: 'Montserrat', sans-serif;
-        text-decoration: none;
-        font-size: 17px;
-        font-weight: 400;
-        text-transform: uppercase;
-        padding-bottom: 0;
-        margin-left: 20%;
-    }
-
-    .logo{
-        min-width: 70px;
-        min-height: 68px;
-    }
-
-    .nav {
-        margin-top: -20%;
-        padding: 0;
-    }
-}
-
-/*
-@media (max-width: 992px) {
-    .navigation {
-        flex-direction: column;
-        background: none;
-        box-shadow: none;
-        padding: 0;
-        min-height: 300px;
-        min-width: 100%;
-    }
-}*/
