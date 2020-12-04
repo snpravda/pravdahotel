@@ -1,39 +1,244 @@
 <!DOCTYPE html>
 {% load static %}
-<html lang="en">
+<html lang="ua" dir="ltr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
     <title>Book</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;900&family=Roboto:wght@400;900&display=swap"
+          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,700&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/general.css' %}">
     <link rel="stylesheet" href="{% static 'css/styleBook.css' %}">
+    <link rel="stylesheet" href="{% static 'css/popup.css' %}">
+    <script src="{% static 'js/book.js' %}"></script>
+    <script src="{% static 'js/popup.js' %}"></script>
+    <link rel='stylesheet prefetch'
+          href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900&subset=latin,latin-ext'>
+    <link rel="stylesheet" href="{% static 'css/popup.css' %}">
 </head>
 <body>
-    <header>
+
+<div class="mainCont">
+    <div class="wrapper">
         <nav class="nav">
             <a href="/"><img src="{% static 'img/logo.png' %}" alt="logo" class="logo"></a>
             <ul class="navigation">
                 <hr>
                 <li><a href="/about_us">про нас</a></li>
                 <li><a href="/gallery">галерея</a></li>
-                <li><a href="/book">забронювати</a></li>
+                <li><a href="#">забронювати</a></li>
+                <li><a href="#" onclick="entry()"><img src="{% static 'img/indlogin.png' %}" alt="exit"></a></li>
             </ul>
         </nav>
-    </header>
+        <div id="entry">
+            <div id="materialContainer">
 
-    <footer>
-        <div class="end">
-        <!--Icons made by <a href="https://www.flaticon.com/authors/creaticca-creative-agency" title="Creaticca Creative Agency">Creaticca Creative Agency</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a> -->
 
-            <div class="icon-group">
-                <img src="{% static 'img/ftphone.png' %}" alt="" class="resuor"><p class="fter"> +111-222-333</p>
-            </div>
-            <div class="icon-group">
-                <img src="{% static 'img/email.svg' %}" alt="" class="resuor"><p class="fter">pravdahotel@gmail.com</p>
-            </div>
-            <div class="icon-group">
-                <img src="{% static 'img/geolocation.svg' %}" alt="" class="resuor"><p class="fter"> 55 Columbus Circle, New York, NY</p>
+                <div class="box">
+
+                    <div class="title">ВХІД</div>
+
+                    <div class="input">
+                        <label for="name">Логін</label>
+                        <input type="text" name="name" id="name">
+                        <span class="spin"></span>
+                    </div>
+
+                    <div class="input">
+                        <label for="pass">Пароль</label>
+                        <input type="password" name="pass" id="pass">
+                        <span class="spin"></span>
+                    </div>
+
+                    <div class="button login">
+                        <button><span>Почати</span> <i class="fa"></i></button>
+                    </div>
+
+                    <a href="" class="pass-forgot">Забули пароль?</a>
+
+                </div>
+
+                <div class="overbox">
+                    <div class="material-button alt-2"><span class="shape"></span></div>
+
+                    <div class="title">РЕЄСТРАЦІЯ</div>
+
+                    <div class="input">
+                        <label for="regname">Логін</label>
+                        <input type="text" name="regname" id="regname">
+                        <span class="spin"></span>
+                    </div>
+
+                    <div class="input">
+                        <label for="regpass">Пароль</label>
+                        <input type="password" name="regpass" id="regpass">
+                        <span class="spin"></span>
+                    </div>
+
+                    <div class="input">
+                        <label for="reregpass">Повторити пароль</label>
+                        <input type="password" name="reregpass" id="reregpass">
+                        <span class="spin"></span>
+                    </div>
+
+                    <div class="button">
+                        <button><span>Далі</span></button>
+                    </div>
+                    <script src="{% static 'js/popup.js' %}"></script>
+
+                </div>
             </div>
         </div>
-    </footer>
+
+        <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+        <script src="{% static 'js/popup2.js' %}"></script>
+    </div>
+    <hr>
+    <div class="title-book">
+        <h1 class="title-item">забронювати</h1>
+    </div>
+    <section class="wrapper">
+        <ul id="navgal">
+            <li onclick="draft()"><a href="#" class="btn active-gal">Чертежи</a></li>
+            <li onclick="rooms()"><a href="#" class="btn">Номери</a></li>
+
+        </ul>
+        <script type="text/javascript">
+
+            var btnContainer = document.getElementById("navgal");
+
+
+            var btns = btnContainer.getElementsByClassName("btn");
+
+            for (var i = 0; i < btns.length; i++) {
+                btns[i].addEventListener("click", function () {
+                    var current = document.getElementsByClassName("active-gal");
+                    current[0].className = current[0].className.replace(" active-gal", "");
+                    this.className += " active-gal";
+                });
+            }
+        </script>
+        <div id="preview">
+            <div id="exsplanation">
+                <h2>Приблизна схема розташування номерів</h2>
+                <p>Наведіть курсор на середину потрібної вам кімнати, щоб ознайомитись із її приблизним дизайном</p>
+            </div>
+            <div class="draft">
+                <div class="draft-item">
+                    <img src="{% static 'img/corridor.png' %}" alt="corridor" id="corridor" onmouseout="reply_mouseOut(this.id);"
+                         onmouseover="reply_mousOver(this.id)">
+                </div>
+
+                <div class="draft-item">
+                    <a><img src="{% static 'img/hR1.png' %}" alt="hotelRoom1" id="hR1" onmouseout="reply_mouseOut(this.id);"
+                            onmouseover="reply_mousOver(this.id)"></a>
+                </div>
+                <div class="draft-item">
+                    <a><img src="{% static 'img/hallway.png' %}" alt="hallway" id="hallway" onmouseout="reply_mouseOut(this.id);"
+                            onmouseover="reply_mousOver(this.id)"></a>
+                </div>
+                <div class="draft-item ">
+                    <a><img src="{% static 'img/hR3.png' %}" alt="hotelRoom3" id="hR3" onmouseout="reply_mouseOut(this.id);"
+                            onmouseover="reply_mousOver(this.id)"></a>
+                </div>
+                <div class="draft-item ">
+                    <a><img src="{% static 'img/hR2.png' %}" alt="hotelRoom2" id="hR2" onmouseout="reply_mouseOut(this.id);"
+                            onmouseover="reply_mousOver(this.id)"></a>
+                </div>
+                <div class="draft-item ">
+                    <a><img src="{% static 'img/side.png' %}" alt="side" id="side"></a>
+                </div>
+            </div>
+
+        </div>
+        <div id="roomDetails">
+            <div class="roombanner">
+                <img src="{% static 'img/r1.png' %}" alt="room for 1/2">
+                <p>Покращений двомісний номер з 1 ліжком або 2 окремими ліжками</p>
+                <button type="button" name="Детальніше" id="r1" onclick="btn(this.id)">Детальніше</button>
+            </div>
+            <div class="roombanner">
+                <img src="{% static 'img/r2.png' %}" alt="room for 2/3">
+                <p>Покращений сімейний номер (для 3 дорослих)</p>
+                <button type="button" name="Детальніше" id="r2" onclick="btn(this.id)">Детальніше</button>
+            </div>
+            <div class="roombanner">
+                <img src="{% static 'img/r3.png' %}" alt="room for 3 and more">
+                <p>Номер люкс (до 6 осіб)</p>
+                <button type="button" name="Детальніше" id="r3" onclick="btn(this.id)">Детальніше</button>
+            </div>
+            <div id="mypopup" class="popup">
+                <div class="popup-content">
+                    <div class="popup-header">
+                        <span class="close" onclick="cross()">&times;</span>
+                    </div>
+                    <div class="popup-body">
+                        <div class="general-title">
+                            <img src="" alt="room for 1/2" id="img">
+                            <p id="order"></p>
+                        </div>
+                        <div class="detailRoom">
+                            <p id="description"></p>
+                        </div>
+                    </div>
+                    <div class="popup-footer">
+                        <form class="popup-form" action="index.html" method="post">
+                            <div class="dates">
+                                <div class="FTR arrive">
+                                    <h4>Дата заїзду:</h4>
+                                    <input type="date" name="" value="заїзд">
+                                </div>
+                                <div class="FTR departure">
+                                    <h4>Дата від'їзду: </h4>
+                                    <input type="date" name="" value="від'їзд">
+                                </div>
+                            </div>
+
+                            <div class="numberes">
+                                <div class="FRM quantity">
+                                    <h4>Номерів:</h4>
+                                    <input type="number" name="" value="кількість номерів">
+                                </div>
+                                <div class="FRM adults">
+                                    <h4>Дорослих:</h4>
+                                    <input type="number" name="" value="кількість дорослих">
+                                </div>
+                                <div class="FRM children">
+                                    <h4>Дітей:</h4>
+                                    <input type="number" name="кількість дітей" value="кількість дітей">
+                                </div>
+                            </div>
+
+                        </form>
+                        <input type="submit" name="Підтвердити" value="Підтвердити" class="popup-submit">
+                    </div>
+                </div>
+            </div>
+
+
+    </section>
+
+</div>
+
+<footer>
+    <div class="end">
+        <!--Icons made by <a href="https://www.flaticon.com/authors/creaticca-creative-agency" title="Creaticca Creative Agency">Creaticca Creative Agency</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a> -->
+
+        <div class="icon-group">
+            <img src="{% static 'img/ftphone.png' %}" alt="" class="resuor">
+            <p class="fter"> +111-222-333</p>
+        </div>
+        <div class="icon-group">
+            <img src="{% static 'img/email.svg' %}" alt="" class="resuor">
+            <p class="fter">pravdahotel@gmail.com</p>
+        </div>
+        <div class="icon-group">
+            <img src="{% static 'img/geolocation.svg' %}" alt="" class="resuor">
+            <p class="fter"> 55 Columbus Circle, New York, NY</p>
+        </div>
+    </div>
+</footer>
 </body>
 </html>
