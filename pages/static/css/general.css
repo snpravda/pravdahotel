@@ -1,12 +1,11 @@
-
 body {
     font-family: 'Playfair Display', serif;
     background: #b0ada5;
-    height: 100%;
     background-image: url(../img/bgiforpage.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
+    height: 100%;
 }
 
 .wrapper {
@@ -261,7 +260,7 @@ hr {
     }
 
     .resuor {
-        display: none;
+        display: block;
     }
 
     .icon-group {
@@ -316,7 +315,7 @@ hr {
     }
 
     .resuor {
-        display: none;
+        display: block;
     }
 
     .icon-group {
