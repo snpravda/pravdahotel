@@ -33,10 +33,9 @@ def book(request):
         return render(request, 'book.html')
     if request.method == "POST":
         try:
-            if not Person.objects.get(phone=request.POST['phone']):
+            person = Person.objects.filter(phone=request.POST['phone']).first()
+            if not person:
                 person = Person.objects.create(phone=request.POST['phone'])
-            else:
-                person = Person.objects.get(phone=request.POST['phone'])
             room_id = get_room_id(request.POST)
             room = Room.objects.filter(room=room_id).first()
             check_in = request.POST['arrive']
