@@ -10,7 +10,7 @@ function reply_mouseOut(clicked_id) {
 function btn(clicked_id) {
     popup = document.getElementById("mypopup");
     popup.style.display = "block";
-    document.getElementById('img').src = "/static/img/"+clicked_id
+    document.getElementById('img').src = "/static/img/"+clicked_id+".png"
     if (clicked_id == 'r1') {
         document.getElementById('order').innerHTML = "Покращений двомісний номер з 1 ліжком або 2 окремими ліжками";
         document.getElementById('description').innerHTML = "У числі зручностей номера з ламінатом на підлозі 1 двоспальне або 2 односпальні ліжка, диван, письмовий стіл, балкон з видом на місто, кондиціонер і 42-дюймовий ЖК-телевізор зі світлодіодним підсвічуванням. У власній ванній кімнаті з душем надаються фен, тапочки і халати. Також в розпорядженні гостей сейф для ноутбука, вибір подушок, міні-бар, 2 пляшки води по 0,5 літра і приналежності для чаю / кави, включаючи електричний чайник.";
