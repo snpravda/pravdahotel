@@ -21,7 +21,7 @@ function btn(clicked_id) {
         document.getElementById('order').innerHTML = "Номер люкс (до 6 осіб)";
         document.getElementById('description').innerHTML = "Люкс площею 235 кв. м. Гості цього люкса можуть безкоштовно користуватися комфортабельними павільйонами біля басейну. Потрібно попереднє бронювання павільйонів.";
     }
-
+    document.getElementById('submit').setAttribute('name', clicked_id);
 };
 
 function cross() {
