@@ -103,8 +103,8 @@
     <h1 class="title-item">забронювати</h1>
 </div>
 <section class="wrapper">
-    <ul id="navgal">
-        <li onclick="draft()"><a href="#" class="btn active-gal">Чертежи</a></li>
+    {% comment %}<ul id="navgal">
+        <li onclick="draft()"><a href="#" class="btn active-gal">Схема</a></li>
         <li onclick="rooms()"><a href="#" class="btn">Номери</a></li>
 
     </ul>
@@ -157,19 +157,19 @@
             </div>
         </div>
 
-    </div>
+    </div>{% endcomment %}
     <div id="roomDetails">
-        <div class="roombanner">
+        <div class="roombanner roombanner1">
             <img src="{% static 'img/r1.png' %}" alt="room for 1/2">
             <p>Покращений двомісний номер з 1 ліжком або 2 окремими ліжками</p>
             <button type="button" name="Детальніше" id="r1" onclick="btn(this.id)">Детальніше</button>
         </div>
-        <div class="roombanner">
+        <div class="roombanner roombanner2">
             <img src="{% static 'img/r2.png' %}" alt="room for 2/3">
             <p>Покращений сімейний номер (для 3 дорослих)</p>
             <button type="button" name="Детальніше" id="r2" onclick="btn(this.id)">Детальніше</button>
         </div>
-        <div class="roombanner">
+        <div class="roombanner roombanner3">
             <img src="{% static 'img/r3.png' %}" alt="room for 3 and more">
             <p>Номер люкс (до 6 осіб)</p>
             <button type="button" name="Детальніше" id="r3" onclick="btn(this.id)">Детальніше</button>
@@ -189,35 +189,40 @@
                     </div>
                 </div>
                 <div class="popup-footer">
-                    <form class="popup-form" action="index.html" method="post">
+                    <form class="popup-form" action="/book" method="post">
                         <div class="dates">
                             <div class="FTR arrive">
                                 <h4>Дата заїзду:</h4>
-                                <input type="date" name="" value="заїзд">
+                                <input type="date" name="arrive">
                             </div>
                             <div class="FTR departure">
                                 <h4>Дата від'їзду: </h4>
-                                <input type="date" name="" value="від'їзд">
+                                <input type="date" name="departure">
                             </div>
                         </div>
 
                         <div class="numberes">
                             <div class="FRM quantity">
                                 <h4>Номерів:</h4>
-                                <input type="number" name="" value="кількість номерів">
+                                <input type="number" name="quantity">
                             </div>
                             <div class="FRM adults">
                                 <h4>Дорослих:</h4>
-                                <input type="number" name="" value="кількість дорослих">
+                                <input type="number" name="adults">
                             </div>
                             <div class="FRM children">
                                 <h4>Дітей:</h4>
-                                <input type="number" name="кількість дітей" value="кількість дітей">
+                                <input type="number" name="children">
                             </div>
                         </div>
-
+                        <div class="phone">
+                            <div class="FP">
+                                <h4>Номер телефону:</h4>
+                                <input type="text" name="phone">
+                            </div>
+                        </div>
+                        <input type="submit" name="submit"  value="Підтвердити" class="popup-submit">
                     </form>
-                    <input type="submit" name="Підтвердити" value="Підтвердити" class="popup-submit">
                 </div>
             </div>
         </div>
