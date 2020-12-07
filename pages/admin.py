@@ -12,11 +12,18 @@ class NotebookAdmin(admin.ModelAdmin):
         'room',
     )
 
+class NotebookInline(admin.TabularInline):
+    model = Notebook
+
 class RoomAdmin(admin.ModelAdmin):
     list_display = ('__str__',)
 
 class PersonAdmin(admin.ModelAdmin):
-    list_display = ('__str__',)
+    # list_display = ('__str__',)
+    inlines = [
+        NotebookInline
+    ]
+
 
 
 admin.site.register(Notebook, NotebookAdmin)
