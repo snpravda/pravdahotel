@@ -1,5 +1,5 @@
 from django.db import models
-
+from mongoengine import fields, Document
 # Create your models here.
 
 class Person(models.Model):
@@ -28,3 +28,11 @@ class Notebook(models.Model):
 
     def __str__(self):
         return str(self.id)
+
+
+class Text(Document):
+    page = fields.StringField(required=True)
+    text = fields.ListField(fields.StringField())
+
+    def __str__(self):
+        return str(self.page)

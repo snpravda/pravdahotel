@@ -18,13 +18,15 @@ def handler404(request, *args, **kwargs):
 
 def index(request):
     if request.method == "GET":
-        return render(request, 'index.html')
+        text = Text.objects.filter(page="index").first().text
+        return render(request, 'index.html', context={"text":text})#, text = text)
     return render(request, 'index.html')
 
 
 def about_us(request):
     if request.method == "GET":
-        return render(request, 'aboutUs.html')
+        text = Text.objects.filter(page="aboutUs").first().text
+        return render(request, 'aboutUs.html', context={"text":text})
     return render(request, 'aboutUs.html')
 
 
