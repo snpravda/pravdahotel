@@ -347,13 +347,13 @@
     height: 632.85px;
 }
 
-input:invalid {
-  border: 2px dashed red;
-}
+/*input:invalid {*/
+/*  border: 2px dashed red;*/
+/*}*/
 
-input:invalid:required {
-  background-image: linear-gradient(to right, pink, lightgreen);
-}
+/*input:invalid:required {*/
+/*  background-image: linear-gradient(to right, pink, lightgreen);*/
+/*}*/
 
 @media (max-width: 767px) {
 

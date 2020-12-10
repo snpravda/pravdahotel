@@ -52,22 +52,22 @@ function rooms() {
 
 
 
-function validation() {
-    alert("You clicked?");
-    var arr = document.getElementsByName("departure");
-    var dep = document.getElementsByName("arrive");
-    if (arr.value > dep.value){
-        dep.validity.valid = false;
-        return false;
-    } else if (arr.value < arr.min){
-        arr.validity.valid = false;
-        return false;
-    } else if (dep.value < dep.min) {
-        dep.validity.valid = false;
-        return false;
-    }
-    return true;
-}
+// function validation() {
+//     alert("You clicked?");
+//     var arr = document.getElementsByName("departure");
+//     var dep = document.getElementsByName("arrive");
+//     if (arr.value > dep.value){
+//         dep.validity.valid = false;
+//         return false;
+//     } else if (arr.value < arr.min){
+//         arr.validity.valid = false;
+//         return false;
+//     } else if (dep.value < dep.min) {
+//         dep.validity.valid = false;
+//         return false;
+//     }
+//     return true;
+// }
 
 function setMinToday() {
     var today = new Date();
