@@ -30,10 +30,10 @@
                 <li><a href="/about_us">про нас</a></li>
                 <li><a href="/gallery">галерея</a></li>
                 <li><a href="#">забронювати</a></li>
-{#                <li><a href="#" onclick="entry()"><img src="{% static 'img/indlogin.png' %}" alt="exit"></a></li>#}
+                {#                <li><a href="#" onclick="entry()"><img src="{% static 'img/indlogin.png' %}" alt="exit"></a></li>#}
             </ul>
         </nav>
-       {% comment %} <div id="entry">
+        {% comment %} <div id="entry">
             <div id="materialContainer">
 
 
@@ -189,15 +189,15 @@
                     </div>
                 </div>
                 <div class="popup-footer">
-                    <form class="popup-form" action="/book/" method="post"> {% csrf_token %}
+                    <form class="popup-form" action="/book/" method="post" onsubmit="return validation();"> {% csrf_token %}
                         <div class="dates">
                             <div class="FTR arrive">
                                 <h4>Дата заїзду:</h4>
-                                <input type="date" name="arrive">
+                                <input type="date" name="arrive" required>
                             </div>
                             <div class="FTR departure">
                                 <h4>Дата від'їзду: </h4>
-                                <input type="date" name="departure">
+                                <input type="date" name="departure" required>
                             </div>
                         </div>
 
@@ -218,7 +218,7 @@
                         <div class="phone">
                             <div class="FP">
                                 <h4>Номер телефону:</h4>
-                                <input type="text" name="phone">
+                                <input type="text" name="phone" required minlength="1">
                             </div>
                         </div>
                         <input type="submit" name="" id="submit" value="Підтвердити" class="popup-submit">
