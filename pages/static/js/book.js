@@ -1,4 +1,3 @@
-
 function reply_mousOver(clicked_id) {
     document.getElementById(clicked_id).src = "/static/img/" + clicked_id + ".jpg";
 }
@@ -51,7 +50,6 @@ function rooms() {
 }
 
 
-
 function validation() {
     let dep = document.forms["form"]["departure"];
     let arr = document.forms["form"]["arrive"];
@@ -59,15 +57,13 @@ function validation() {
     arr.setCustomValidity("");
     dep.setCustomValidity("");
     // let submit = true
-    if (arr.value < today){
+    if (arr.value < today) {
         arr.setCustomValidity("Невірна дата заїзду!");
         return;
-    }
-    else if (dep.value < today) {
+    } else if (dep.value < today) {
         dep.setCustomValidity("Невірна дата виїзду!");
         return;
-    }
-    else if (arr.value > dep.value){
+    } else if (arr.value > dep.value) {
         arr.setCustomValidity("Дата заїзду не може бути пізніше дати виїзду!");
         return;
     }
@@ -75,6 +71,9 @@ function validation() {
     //     arr.setCustomValidity("");
     //     dep.setCustomValidity("");
     // }
+
+    let id = document.getElementById('submit').name;
+    saveToStorage(arr.value, dep.value, id)
 
     document.forms["form"].submit()
 
@@ -102,10 +101,35 @@ function todays_date() {
     return today
 }
 
-function checkValid(){
-    let dep = document.forms["form"]["departure"];
-    let arr = document.forms["form"]["arrive"];
-    arr.checkValidity()
-    dep.checkValidity()
+function saveToStorage(arr, dep, id) {
+    localStorage.clear();
+    var room;
+    if (id === 'r1') {
+        room = "Покращений двомісний номер з 1 ліжком або 2 окремими ліжками";
 
+    } else if (id === 'r2') {
+        room = "Покращений сімейний номер (для 3 дорослих)";
+
+    } else {
+        room = "Номер люкс (до 6 осіб)";
+    }
+
+    localStorage.setItem("check_in", arr);
+    localStorage.setItem("check_out", dep);
+    localStorage.setItem("room", room);
+
+}
+
+// function lastBook(){
+//
+// }
+
+window.onload = function() {
+    if (localStorage.getItem("room")){
+        arr = localStorage["check_in"];
+        dep = localStorage["check_out"];
+        room = localStorage["room"];
+        str = "Остання ваша бронь: " + room + " з " + arr + " по " + dep;
+        document.getElementById("lastBook").innerHTML = str;
+    }
 }
