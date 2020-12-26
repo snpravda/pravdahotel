@@ -189,7 +189,7 @@
                     </div>
                 </div>
                 <div class="popup-footer">
-                    <form class="popup-form" action="/book/" method="post"> {% csrf_token %}
+                    <form class="popup-form" name="form" action="/book/" method="post"> {% csrf_token %}
                         <div class="dates">
                             <div class="FTR arrive">
                                 <h4>Дата заїзду:</h4>
@@ -218,10 +218,10 @@
                         <div class="phone">
                             <div class="FP">
                                 <h4>Номер телефону:</h4>
-                                <input type="text" name="phone" required minlength="1">
+                                <input type="text" name="phone" minlength="1" required>
                             </div>
                         </div>
-                        <input type="submit" name="" id="submit" value="Підтвердити" class="popup-submit">
+                        <input type="submit" name="" id="submit" value="Підтвердити" onclick="validation()" class="popup-submit">
                     </form>
                 </div>
             </div>

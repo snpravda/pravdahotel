@@ -52,36 +52,60 @@ function rooms() {
 
 
 
-// function validation() {
-//     alert("You clicked?");
-//     var arr = document.getElementsByName("departure");
-//     var dep = document.getElementsByName("arrive");
-//     if (arr.value > dep.value){
-//         dep.validity.valid = false;
-//         return false;
-//     } else if (arr.value < arr.min){
-//         arr.validity.valid = false;
-//         return false;
-//     } else if (dep.value < dep.min) {
-//         dep.validity.valid = false;
-//         return false;
-//     }
-//     return true;
-// }
+function validation() {
+    let dep = document.forms["form"]["departure"];
+    let arr = document.forms["form"]["arrive"];
+    let today = todays_date();
+    arr.setCustomValidity("");
+    dep.setCustomValidity("");
+    // let submit = true
+    if (arr.value < today){
+        arr.setCustomValidity("Невірна дата заїзду!");
+        return;
+    }
+    else if (dep.value < today) {
+        dep.setCustomValidity("Невірна дата виїзду!");
+        return;
+    }
+    else if (arr.value > dep.value){
+        arr.setCustomValidity("Дата заїзду не може бути пізніше дати виїзду!");
+        return;
+    }
+    // else {
+    //     arr.setCustomValidity("");
+    //     dep.setCustomValidity("");
+    // }
 
-// function setMinToday() {
-//     var today = new Date();
-//     var dd = today.getDate();
-//     var mm = today.getMonth() + 1; //January is 0!
-//     var yyyy = today.getFullYear();
-//     if (dd < 10) {
-//         dd = '0' + dd
-//     }
-//     if (mm < 10) {
-//         mm = '0' + mm
-//     }
-//
-//     today = yyyy + '-' + mm + '-' + dd;
-//     document.getElementsByName("arrive").min = today;
-//     document.getElementsByName("departure").min = today;
-// }
+    document.forms["form"].submit()
+
+    // if (submit){
+    //     document.forms["form"].submit()
+    // }
+
+}
+
+function todays_date() {
+    var today = new Date();
+    var dd = today.getDate();
+    var mm = today.getMonth() + 1; //January is 0!
+    var yyyy = today.getFullYear();
+    if (dd < 10) {
+        dd = '0' + dd
+    }
+    if (mm < 10) {
+        mm = '0' + mm
+    }
+
+    today = yyyy + '-' + mm + '-' + dd;
+    // document.document.forms["form"]["departure"].min = today;
+    // document.document.forms["form"]["arrive"].min = today;
+    return today
+}
+
+function checkValid(){
+    let dep = document.forms["form"]["departure"];
+    let arr = document.forms["form"]["arrive"];
+    arr.checkValidity()
+    dep.checkValidity()
+
+}
